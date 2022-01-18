@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Категории</h1>
+                    <h1 class="m-0">{{ $category->title }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -25,28 +25,19 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-1 mb-3">
-                    <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-info">Добавить</a>
-                </div>
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body table-responsive p-0">
                                 <table class="table table-hover text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Название</th>
-                                            <th><i class="fas fa-caret-down"></i></th>
-                                        </tr>
-                                    </thead>
                                     <tbody>
-                                        @foreach($categories as $category)
-                                            <tr>
-                                                <td>{{ $category->id }}</td>
-                                                <td>{{ $category->title }}</td>
-                                                <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="fas fa-eye"></i></a></td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td>ID</td>
+                                            <td>{{ $category->id }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Название</td>
+                                            <td>{{ $category->title }}</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div><!-- /.card-body -->
