@@ -36,7 +36,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Название</th>
-                                            <th><i class="fas fa-caret-down"></i></th>
+                                            <th colspan="2"><i class="fas fa-caret-down"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -45,6 +45,7 @@
                                                 <td>{{ $category->id }}</td>
                                                 <td>{{ $category->title }}</td>
                                                 <td><a href="{{ route('admin.category.show', $category->id) }}"><i class="fas fa-eye"></i></a></td>
+                                                <td><a href="{{ route('admin.category.edit', $category->id) }}"><i class="fas fa-pen"></i></a></td>
                                             </tr>
                                         @endforeach
                                     </tbody>
