@@ -11,4 +11,5 @@ class Tag extends Model
 
     protected $table = 'tags';
     protected $quarded = false;
+    protected $fillable = ['title'];
 }
