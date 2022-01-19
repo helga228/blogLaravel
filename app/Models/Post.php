@@ -10,7 +10,7 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'content', 'title'];
+        'content', 'title', 'preview_image', 'main_image'];
      protected $table = 'posts';
      protected $quarded = false;
 
