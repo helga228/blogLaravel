@@ -14,4 +14,5 @@ class Post extends Model
      protected $table = 'posts';
      protected $quarded = false;
 
+
 }

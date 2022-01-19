@@ -33,14 +33,16 @@
                             @error('content')
                             <div class="text-danger">это поле нужно заполниить</div>
                             @enderror
-                            @error('title')
+                        </div>
+                        <div class="form-group">
+                            <textarea id="summernote" name="content">
+                                {{ old('content') }}
+                            </textarea>
+                            @error('content')
                             <div class="text-danger">это поле нужно заполниить</div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <textarea id="summernote" name="content"></textarea>
-                        </div>
-                        <div class="form-group w-25">
+                        <div class="form-group w-50">
                             <label for="exampleInputFile">Добавить превью</label>
                             <div class="input-group">
                                 <div class="custom-file">
@@ -51,8 +53,11 @@
                                     <span class="input-group-text">Загрузить</span>
                                 </div>
                             </div>
+                            @error('preview_image')
+                            <div class="text-danger">что то тут не так</div>
+                            @enderror
                         </div>
-                        <div class="form-group w-25">
+                        <div class="form-group w-50">
                             <label for="exampleInputFile">Добавить изображение</label>
                             <div class="input-group">
                                 <div class="custom-file">
@@ -63,10 +68,23 @@
                                     <span class="input-group-text">Загрузить</span>
                                 </div>
                             </div>
+                            @error('main_image')
+                            <div class="text-danger">и тут</div>
+                            @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Добавить">
+                        <div class="form-group w-50">
+                            <label>Выберите категорию</label>
+                            <select name="category_id" class="form-control">
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}"
+                                        {{ $category->id  == old('category_id') ? 'selected' : '' }}
+                                >{{ $category->title }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
+                        <input type="submit" class="btn btn-primary" value="Добавить">
+
                     </form>
                 </div>
             </div>
