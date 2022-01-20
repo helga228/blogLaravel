@@ -47,7 +47,8 @@
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="preview_image">
-                                    <label class="custom-file-label">Выберите изображение</label</div>
+                                    <label class="custom-file-label">Выберите изображение</label>
+                                </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Загрузка</span>
                                 </div>
@@ -58,7 +59,8 @@
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="main_image">
-                                    <label class="custom-file-label">Выберите изображение</label</div>
+                                    <label class="custom-file-label">Выберите изображение</label>
+                                </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">Загрузка</span>
                                 </div>
@@ -78,7 +80,7 @@
                             <label>Теги</label>
                             <select class="select2" name="tag_ids[]" multiple="multiple" data-placeholder="Выберите теги" style="width: 100%;">
                                 @foreach($tags as $tag)
-                                    <option {{ is_array( old('tag_ids')) & in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
+                                    <option {{ is_array( old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
                                 @endforeach
                             </select>
                         </div>
